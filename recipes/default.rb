@@ -38,7 +38,7 @@ end
 
 
 # config file parameters
-host_ipaddress = node['graylog']['ipaddress']
+host_ipaddress = node['host']['ipaddress']
 elasticsearch_port = node['elasticsearch']['port']
 mongodb_port = node['mongodb']['port']
 my_hash = {
