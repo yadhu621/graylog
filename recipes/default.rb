@@ -14,7 +14,7 @@ cookbook_file '/etc/yum.repos.d/mongo.repo' do
 end
 
 cookbook_file '/etc/yum.repos.d/elasticsearch.repo' do
-  source 'mongo.repo'
+  source 'elasticsearch.repo'
   owner 'root'
   group 'root'
   mode '0644'
@@ -22,7 +22,7 @@ cookbook_file '/etc/yum.repos.d/elasticsearch.repo' do
 end
 
 cookbook_file '/etc/yum.repos.d/graylog.repo' do
-  source 'mongo.repo'
+  source 'graylog.repo'
   owner 'root'
   group 'root'
   mode '0644'
