@@ -38,12 +38,12 @@ end
 
 
 # copy config files
-self_ipaddress = node['graylog']['ipaddress']
+host_ipaddress = node['graylog']['ipaddress']
 elasticsearch_port = node['elasticsearch']['port']
-my_hash = { self_ipaddress: self_ipaddress, elasticsearch_port: elasticsearch_port }
+my_hash = { host_ipaddress: host_ipaddress, elasticsearch_port: elasticsearch_port }
 
 template '/etc/elasticsearch/elasticsearch.yml' do
-  source 'elasticsearch.yml'
+  source 'elasticsearch.yml.erb'
   owner 'elasticsearch'
   mode '0644'
   action :create
