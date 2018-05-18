@@ -41,10 +41,14 @@ end
 host_ipaddress = node['host']['ipaddress']
 elasticsearch_port = node['elasticsearch']['port']
 mongodb_port = node['mongodb']['port']
-my_hash = {
+password_secret = node['graylog']['password_secret']
+password_sha2 = node['graylog']['password_sha2']
+my_param_hash = {
   host_ipaddress: host_ipaddress,
   elasticsearch_port: elasticsearch_port,
   mongodb_port: mongodb_port,
+  password_secret: password_secret,
+  password_sha2: password_sha2,
 }
 
 # deliver config files
@@ -53,7 +57,7 @@ template '/etc/mongod.conf' do
   owner 'mongod'
   mode '0644'
   action :create
-  variables (my_hash)
+  variables (my_param_hash)
 end
 
 template '/etc/elasticsearch/elasticsearch.yml' do
@@ -61,7 +65,7 @@ template '/etc/elasticsearch/elasticsearch.yml' do
   owner 'elasticsearch'
   mode '0644'
   action :create
-  variables (my_hash)
+  variables (my_param_hash)
 end
 
 # create folders

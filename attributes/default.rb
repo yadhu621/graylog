@@ -8,8 +8,9 @@ default['mongodb']['port'] = '27017'
 default['elasticsearch']['port'] = '9200'
 
 # graylog attributes
-# password
-# secret_hash
+default['graylog']['password_secret'] = 'IVdOdVWO0ZOWoX8OhhoWNVum84rM0h4ipwZ6j1GOiK71ktdB1sfnNp61zxuKL6GEwmTRUe9UGdxQvjMy8DukjOmk1vQsq4X8'
+default['graylog']['password_sha2'] = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'
+
 # port
 # host
 # elasticsearch node
