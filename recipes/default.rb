@@ -37,10 +37,24 @@ end
 end
 
 
-# copy config files
+# config file parameters
 host_ipaddress = node['graylog']['ipaddress']
 elasticsearch_port = node['elasticsearch']['port']
-my_hash = { host_ipaddress: host_ipaddress, elasticsearch_port: elasticsearch_port }
+mongodb_port = node['mongodb']['port']
+my_hash = {
+  host_ipaddress: host_ipaddress,
+  elasticsearch_port: elasticsearch_port,
+  mongodb_port: mongodb_port,
+}
+
+# deliver config files
+template '/etc/mongod.conf' do
+  source 'mongod.conf.erb'
+  owner 'mongod'
+  mode '0644'
+  action :create
+  variables (my_hash)
+end
 
 template '/etc/elasticsearch/elasticsearch.yml' do
   source 'elasticsearch.yml.erb'
