@@ -38,6 +38,18 @@ end
 
 
 # copy config files
+self_ipaddress = node['graylog']['ipaddress']
+elasticsearch_port = node['elasticsearch']['port']
+my_hash = { self_ipaddress: self_ipaddress, elasticsearch_port: elasticsearch_port }
+
+template '/etc/elasticsearch/elasticsearch.yml' do
+  source 'elasticsearch.yml'
+  owner 'elasticsearch'
+  mode '0644'
+  action :create
+  variables (my_hash)
+end
+
 # create folders
 
 # start and enable service
