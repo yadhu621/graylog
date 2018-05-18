@@ -29,8 +29,21 @@ cookbook_file '/etc/yum.repos.d/graylog.repo' do
   action :create
 end
 
+# install software
+['java-1.8.0', 'mongodb-org', 'elasticsearch', 'graylog-server'].each do |pkg|
+  package pkg do
+    action :install
+  end
+end
 
-# install softwares
+
 # copy config files
 # create folders
+
 # start and enable service
+['mongod', 'elasticsearch', 'graylog-server'].each do |s|
+  service s do
+    action [:start, :enable]
+  end
+end
+
