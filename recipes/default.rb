@@ -68,6 +68,14 @@ template '/etc/elasticsearch/elasticsearch.yml' do
   variables (my_param_hash)
 end
 
+template '/etc/graylog/server/server.conf' do
+  source 'server.conf.erb'
+  owner 'elasticsearch'
+  mode '0644'
+  action :create
+  variables (my_param_hash)
+end
+
 # create folders
 
 # start and enable service
