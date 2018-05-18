@@ -1,4 +1,4 @@
 # graylog
 
-TODO: Enter the cookbook description here.
+## Installs and configures a single node graylog cluster
 

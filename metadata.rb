@@ -1,6 +1,6 @@
 name 'graylog'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Yadhu'
+maintainer_email 'yadhu621@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures graylog'
 long_description 'Installs/Configures graylog'
