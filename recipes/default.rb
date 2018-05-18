@@ -57,6 +57,7 @@ template '/etc/mongod.conf' do
   owner 'mongod'
   mode '0644'
   action :create
+  notifies :restart, 'service[mongod]', :immediately
   variables (my_param_hash)
 end
 
@@ -65,6 +66,7 @@ template '/etc/elasticsearch/elasticsearch.yml' do
   owner 'elasticsearch'
   mode '0644'
   action :create
+  notifies :restart, 'service[elasticsearch]', :immediately
   variables (my_param_hash)
 end
 
@@ -73,6 +75,7 @@ template '/etc/graylog/server/server.conf' do
   owner 'elasticsearch'
   mode '0644'
   action :create
+  notifies :restart, 'service[graylog-server]', :immediately
   variables (my_param_hash)
 end
 
