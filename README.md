@@ -2,6 +2,6 @@
 
 Installs and configures a single node graylog cluster 
 
-# Supported platform
+## Supported platform
 - RHEL7
 

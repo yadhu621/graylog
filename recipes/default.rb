@@ -43,12 +43,14 @@ elasticsearch_port = node['elasticsearch']['port']
 mongodb_port = node['mongodb']['port']
 password_secret = node['graylog']['password_secret']
 password_sha2 = node['graylog']['password_sha2']
+public_ipaddress = node['host']['public_ipaddress']
 my_param_hash = {
   host_ipaddress: host_ipaddress,
   elasticsearch_port: elasticsearch_port,
   mongodb_port: mongodb_port,
   password_secret: password_secret,
   password_sha2: password_sha2,
+  public_ipaddress: public_ipaddress
 }
 
 # deliver config files
