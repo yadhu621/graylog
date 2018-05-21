@@ -1,4 +1,7 @@
 # graylog
 
-Installs and configures a single node graylog cluster
+Installs and configures a single node graylog cluster 
+
+# Supported platform
+- RHEL7
 
