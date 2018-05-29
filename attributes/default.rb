@@ -1,6 +1,6 @@
 # commmon attributes
 default['host']['ipaddress'] = node['ipaddress']  # private ipaddress
-default['host']['public_ipaddress'] = "35.177.190.105" # aws public ip
+default['host']['public_ipaddress'] = "52.56.208.195" # aws public ip
 
 # mongodb attributes
 default['mongodb']['port'] = '27017'
